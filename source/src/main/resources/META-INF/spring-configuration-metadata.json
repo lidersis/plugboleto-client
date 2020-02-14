@@ -1,0 +1,27 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.github.lidersis.plugboleto.client.service.spring.PlugBoletoConfigurationProperties",
+      "name": "plugboleto.client",
+      "type": "com.github.lidersis.plugboleto.client.service.spring.PlugBoletoConfigurationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.github.lidersis.plugboleto.client.service.spring.PlugBoletoConfigurationProperties",
+      "name": "plugboleto.client.base-url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.lidersis.plugboleto.client.service.spring.PlugBoletoConfigurationProperties",
+      "name": "plugboleto.client.client",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.lidersis.plugboleto.client.service.spring.PlugBoletoConfigurationProperties",
+      "name": "plugboleto.client.token",
+      "type": "java.lang.String"
+    }
+  ]
+}

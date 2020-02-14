@@ -1,0 +1,12 @@
+**target/
+**.checkstyle
+**.classpath
+**.externalToolBuilders/
+**.idea/
+**.project
+**.settings/
+**.svn/
+**.tern-project
+**nb-configuration/
+**node_modules/
+**.iml

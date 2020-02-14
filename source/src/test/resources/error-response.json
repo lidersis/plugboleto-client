@@ -1,0 +1,10 @@
+{
+  "_status": "erro",
+  "_mensagem": "Erro de validação.",
+  "_dados": [
+    {
+       "_campo": "cedentecpfcnpj",
+       "_erro": "CPF / CNPJ 14868336000185 já está sendo utilizado pela software house."
+     }
+  ]
+}
