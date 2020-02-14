@@ -10,7 +10,7 @@ import com.github.lidersis.plugboleto.client.Constants;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContaResponse implements Serializable {
+public class ContaRepresentation implements Serializable {
 
   private static final long serialVersionUID = Constants.VERSION;
 
@@ -63,9 +63,9 @@ public class ContaResponse implements Serializable {
   public Boolean impressaoAtualizada;
 
   @JsonProperty("convenios")
-  public List<ConvenioResponse> convenios = null;
+  public List<ConvenioRepresentation> convenios = null;
 
-  public ContaResponse() {
+  public ContaRepresentation() {
     super();
   }
 
@@ -197,11 +197,11 @@ public class ContaResponse implements Serializable {
     this.impressaoAtualizada = impressaoAtualizada;
   }
 
-  public List<ConvenioResponse> getConvenios() {
+  public List<ConvenioRepresentation> getConvenios() {
     return this.convenios;
   }
 
-  public void setConvenios(final List<ConvenioResponse> convenios) {
+  public void setConvenios(final List<ConvenioRepresentation> convenios) {
     this.convenios = convenios;
   }
 

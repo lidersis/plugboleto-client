@@ -2,17 +2,16 @@ package com.github.lidersis.plugboleto.client.service;
 
 import java.util.List;
 
-import com.github.lidersis.plugboleto.client.model.CedenteRequest;
-import com.github.lidersis.plugboleto.client.model.CedenteResponse;
+import com.github.lidersis.plugboleto.client.model.CedenteRepresentation;
 
 public interface PlugBoletoCedente {
 
-  CedenteResponse get(String cnpj);
+  CedenteRepresentation get(Integer id);
 
-  List<CedenteResponse> list();
+  List<CedenteRepresentation> list();
 
-  CedenteResponse save(CedenteRequest cedenteRequest);
-  
-  CedenteResponse update(Integer id, CedenteRequest cedenteRequest);
+  CedenteRepresentation save(CedenteRepresentation rep);
+
+  CedenteRepresentation update(CedenteRepresentation rep);
 
 }

@@ -12,7 +12,7 @@ import com.github.lidersis.plugboleto.client.Constants;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CedenteResponse implements Serializable {
+public class CedenteRepresentation implements Serializable {
 
   private static final long serialVersionUID = Constants.VERSION;
 
@@ -98,7 +98,7 @@ public class CedenteResponse implements Serializable {
   private String uf;
 
   @JsonProperty("contas")
-  private List<ContaResponse> contas = null;
+  private List<ContaRepresentation> contas = null;
 
   @JsonProperty("cidadeibge")
   private Integer cidadeibge;
@@ -106,7 +106,7 @@ public class CedenteResponse implements Serializable {
   @JsonProperty("cidade")
   private String cidade;
 
-  public CedenteResponse() {
+  public CedenteRepresentation() {
     super();
   }
 
@@ -326,11 +326,11 @@ public class CedenteResponse implements Serializable {
     this.uf = uf;
   }
 
-  public List<ContaResponse> getContas() {
+  public List<ContaRepresentation> getContas() {
     return this.contas;
   }
 
-  public void setContas(final List<ContaResponse> contas) {
+  public void setContas(final List<ContaRepresentation> contas) {
     this.contas = contas;
   }
 

@@ -1,4 +1,4 @@
-package com.github.lidersis.plugboleto.client.model;
+package com.github.lidersis.plugboleto.client.service.internal;
 
 import java.io.Serializable;
 

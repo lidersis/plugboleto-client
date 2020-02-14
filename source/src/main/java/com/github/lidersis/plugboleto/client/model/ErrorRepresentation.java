@@ -9,7 +9,7 @@ import com.github.lidersis.plugboleto.client.Constants;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ErrorResponse implements Serializable {
+public class ErrorRepresentation implements Serializable {
 
   private static final long serialVersionUID = Constants.VERSION;
 
@@ -19,7 +19,7 @@ public class ErrorResponse implements Serializable {
   @JsonProperty("_erro")
   public String erro;
 
-  public ErrorResponse() {
+  public ErrorRepresentation() {
     super();
   }
 

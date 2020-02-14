@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.github.lidersis.plugboleto.client.service.PlugBoletoClient;
-import com.github.lidersis.plugboleto.client.service.PlugBoletoClientImpl;
+import com.github.lidersis.plugboleto.client.service.PlugBoletoClient;
 
 @Configuration
 @EnableConfigurationProperties(PlugBoletoConfigurationProperties.class)
@@ -25,7 +25,7 @@ public class PlugBoletoClientConfiguration {
   @ConditionalOnProperty(name = "plugboleto.client.base-url")
   @ConditionalOnMissingBean(PlugBoletoClient.class)
   public PlugBoletoClient plugBoletoClient() {
-    return new PlugBoletoClientImpl(this.plugBoletoConfigurationProperties.getBaseUrl(), this.plugBoletoConfigurationProperties.getClient(), this.plugBoletoConfigurationProperties.getToken());
+    return new PlugBoletoClient(this.plugBoletoConfigurationProperties.getBaseUrl(), this.plugBoletoConfigurationProperties.getClient(), this.plugBoletoConfigurationProperties.getToken());
   }
 
 }

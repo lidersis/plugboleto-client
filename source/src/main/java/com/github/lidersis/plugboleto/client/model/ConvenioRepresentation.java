@@ -9,7 +9,7 @@ import com.github.lidersis.plugboleto.client.Constants;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ConvenioResponse implements Serializable {
+public class ConvenioRepresentation implements Serializable {
 
   private static final long serialVersionUID = Constants.VERSION;
 

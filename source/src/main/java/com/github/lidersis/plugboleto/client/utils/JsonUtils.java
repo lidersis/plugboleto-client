@@ -1,4 +1,4 @@
-package com.github.lidersis.plugboleto.client.service;
+package com.github.lidersis.plugboleto.client.utils;
 
 import java.io.IOException;
 

@@ -10,7 +10,7 @@ import com.github.lidersis.plugboleto.client.Constants;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseWrapper implements Serializable {
+public class ResponseRepresentation implements Serializable {
 
   private static final long serialVersionUID = Constants.VERSION;
 
@@ -23,7 +23,7 @@ public class ResponseWrapper implements Serializable {
   @JsonProperty("_dados")
   private JsonNode dados;
 
-  public ResponseWrapper() {
+  public ResponseRepresentation() {
     super();
   }
 
