@@ -1,0 +1,62 @@
+{
+	"_status": "sucesso",
+	"_dados": {
+		"_sucesso": [],
+		"_falha": [
+			{
+				"_status_http": 400,
+				"_erro": {
+					"erroValidacao": true,
+					"erros": {
+						"boleto": "Boleto com Nosso Número 12345678901 já existe para este convênio."
+					}
+				},
+				"_dados": {
+					"idintegracao": "_o45Xfu6C",
+					"situacao": "FALHA",
+					"TituloNumeroDocumento": "01012020",
+					"TituloNossoNumero": "12345678901",
+					"CedenteContaCodigoBanco": "341",
+					"CedenteContaNumero": "12345",
+					"CedenteConvenioNumero": "1234123456",
+					"SacadoCPFCNPJ": "01001001000113",
+					"SacadoEmail": "lourival@lidersis.com.br",
+					"SacadoEnderecoNumero": "SN",
+					"SacadoEnderecoBairro": "Águas Claras",
+					"SacadoEnderecoCEP": "71953000",
+					"SacadoEnderecoCidade": "Brasília",
+					"SacadoEnderecoComplemento": "Sala 1309",
+					"SacadoEnderecoLogradouro": "QS 03 Ed. Pátio Capital",
+					"SacadoEnderecoPais": "Brasil",
+					"SacadoEnderecoUF": "DF",
+					"SacadoNome": "SACADO DE TESTE",
+					"SacadoTelefone": "6135511006",
+					"SacadoCelular": "61998281006",
+					"TituloDataDesconto": null,
+					"TituloValorDesconto": "0.00",
+					"TituloDataEmissao": "2020-02-18T03:00:00.000Z",
+					"TituloDataVencimento": "2020-03-04T03:00:00.000Z",
+					"TituloValorJuros": "0.00",
+					"TituloPrazoProtesto": null,
+					"TituloMensagem01": "Primeiro campo de mensagem",
+					"TituloMensagem02": "Segundo campo de mensagem",
+					"TituloMensagem03": null,
+					"TituloMensagem04": null,
+					"TituloMensagem05": null,
+					"TituloMensagem06": null,
+					"TituloMensagem07": null,
+					"TituloMensagem08": null,
+					"TituloMensagem09": null,
+					"TituloInstrucao1": null,
+					"TituloInstrucao2": null,
+					"TituloValor": "1.23",
+					"TituloEmissaoBoleto": null,
+					"TituloPostagemBoleto": null,
+					"TituloLocalPagamento": "Pagável em qualquer banco até o vencimento.",
+					"TituloCodigoReferencia": null,
+					"TituloTipoCobranca": null
+				}
+			}
+		]
+	}
+}

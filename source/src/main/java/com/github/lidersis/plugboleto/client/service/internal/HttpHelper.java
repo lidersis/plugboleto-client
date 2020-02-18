@@ -13,6 +13,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.github.lidersis.plugboleto.client.Log;
 import com.github.lidersis.plugboleto.client.model.ErrorRepresentation;
 import com.github.lidersis.plugboleto.client.model.ResponseRepresentation;
 import com.github.lidersis.plugboleto.client.service.PlugBoletoException;
@@ -30,6 +31,9 @@ public abstract class HttpHelper {
     if (httpEntity != null) {
       try (InputStream inputStream = httpEntity.getContent()) {
         String json = CharStreams.toString(new InputStreamReader(inputStream));
+        
+        // Log.getLog().error(json);
+        
         ResponseRepresentation responseWrapper = JsonUtils.toObject(json, ResponseRepresentation.class);
         List<ErrorRepresentation> errorResponse = JsonUtils.toObject(responseWrapper.getDados(), new TypeReference<List<ErrorRepresentation>>() {
           //
@@ -47,6 +51,9 @@ public abstract class HttpHelper {
       if (httpEntity != null) {
         try (InputStream inputStream = httpEntity.getContent()) {
           String json = CharStreams.toString(new InputStreamReader(inputStream));
+          
+          Log.getLog().warn(json);
+          
           ResponseRepresentation responseWrapper = JsonUtils.toObject(json, ResponseRepresentation.class);
           if ("sucesso".equals(responseWrapper.getStatus())) {
             T obj = null;

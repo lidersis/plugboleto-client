@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.github.lidersis.plugboleto.client.Constants;
 import com.github.lidersis.plugboleto.client.model.ErrorRepresentation;
+import com.google.common.base.Strings;
 
 public class PlugBoletoException extends RuntimeException {
 
@@ -27,7 +28,10 @@ public class PlugBoletoException extends RuntimeException {
       if (first) {
         builder.append(" ,");
       }
-      builder.append(item.getCampo() + " - " + item.getErro());
+      if (!Strings.isNullOrEmpty(item.getCampo())) {
+        builder.append(item.getCampo() + " - ");
+      }
+      builder.append(item.getErro());
       first = false;
     }
     return builder.toString();

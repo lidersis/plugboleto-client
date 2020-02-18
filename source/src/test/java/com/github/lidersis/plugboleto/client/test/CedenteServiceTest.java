@@ -30,7 +30,7 @@ public class CedenteServiceTest {
   @Test
   public void test1() throws Exception {
     // CedenteRepresentation rep = this.getClient().cedente().get("11717421000154");
-    CedenteRepresentation rep = this.getClient().cedente().get();
+    CedenteRepresentation rep = this.getClient().cedente().get(Integer.valueOf(4356));
     this.print(rep);
   }
 

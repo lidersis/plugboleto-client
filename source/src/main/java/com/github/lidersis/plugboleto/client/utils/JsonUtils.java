@@ -24,6 +24,9 @@ public abstract class JsonUtils {
   public static String toJson(final Object obj) throws JsonProcessingException, IOException {
     ObjectWriter objectWriter = JsonUtils.MAPPER.writerWithDefaultPrettyPrinter();
     String str = objectWriter.writeValueAsString(obj);
+    
+    // Log.getLog().warn(str);
+    
     return str;
   }
 

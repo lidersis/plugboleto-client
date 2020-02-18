@@ -1,0 +1,18 @@
+{
+	"_status": "sucesso",
+	"_dados": {
+		"_sucesso": [],
+		"_falha": [
+			{
+				"idintegracao": "SkkrjK5l4",
+				"_erro": "Boleto não encontrado",
+				"_status_http": 404
+			},
+			{
+				"idintegracao": "H1x1iK9xN",
+				"_erro": "Boleto não encontrado",
+				"_status_http": 404
+			}
+		]
+	}
+}

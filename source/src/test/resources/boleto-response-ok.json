@@ -1,0 +1,17 @@
+{
+	"_status": "sucesso",
+	"_dados": {
+		"_sucesso": [
+			{
+				"idintegracao": "OQl2q89wG",
+				"situacao": "SALVO",
+				"TituloNumeroDocumento": "01012020",
+				"TituloNossoNumero": "675",
+				"CedenteContaCodigoBanco": "341",
+				"CedenteContaNumero": "12345",
+				"CedenteConvenioNumero": "1234123456"
+			}
+		],
+		"_falha": []
+	}
+}

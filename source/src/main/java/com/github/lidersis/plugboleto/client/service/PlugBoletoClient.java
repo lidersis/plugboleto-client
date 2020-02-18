@@ -3,8 +3,10 @@ package com.github.lidersis.plugboleto.client.service;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 
+import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoBoletoImpl;
 import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoCedenteImpl;
 import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoContaImpl;
+import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoConvenioImpl;
 
 public class PlugBoletoClient {
 
@@ -34,6 +36,14 @@ public class PlugBoletoClient {
 
   public PlugBoletoConta conta() {
     return new PlugBoletoContaImpl(this.httpClient, this.baseUrl, this.cnpj, this.token);
+  }
+
+  public PlugBoletoConvenio convenio() {
+    return new PlugBoletoConvenioImpl(this.httpClient, this.baseUrl, this.cnpj, this.token);
+  }
+
+  public PlugBoletoBoleto boleto() {
+    return new PlugBoletoBoletoImpl(this.httpClient, this.baseUrl, this.cnpj, this.token);
   }
 
 }
