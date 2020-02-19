@@ -36,7 +36,6 @@ public class BoletoServiceTest {
   }
 
   @Test
-  @Ignore
   public void test2() throws Exception {
     List<BoletoRepresentation> list = this.getClient().boleto().list("01001001000113");
     for (BoletoRepresentation item : list) {
@@ -45,19 +44,19 @@ public class BoletoServiceTest {
   }
 
   @Test
+  @Ignore
   public void test3() throws Exception {
     BoletoRepresentation rep = new BoletoRepresentation();
-    
+
     rep.setCedenteCodigoBanco("341");
     rep.setCedenteConta("12345");
     rep.setCedenteContaNumeroDV("6");
     rep.setCedenteNumeroConvenio("1234123456");
-    
-    /*rep.setCedenteCodigoBanco("001");
-    rep.setCedenteConta("2863");
-    rep.setCedenteContaNumeroDV("0");
-    rep.setCedenteNumeroConvenio("5207");*/
-    
+
+    /*
+     * rep.setCedenteCodigoBanco("001"); rep.setCedenteConta("2863"); rep.setCedenteContaNumeroDV("0"); rep.setCedenteNumeroConvenio("5207");
+     */
+
     rep.setSacadoCPFCNPJ("86216503120");
     rep.setSacadoCelular("61998281006");
     rep.setSacadoEmail("lourival@lidersis.com.br");
@@ -78,7 +77,7 @@ public class BoletoServiceTest {
     rep.setTituloMensagem01("Primeiro campo de mensagem");
     rep.setTituloMensagem02("Segundo campo de mensagem");
     rep.setTituloMensagem03("Terceiro campo de mensagem");
-    rep.setTituloNossoNumero("12345678999");
+    rep.setTituloNossoNumero("12345678998");
     rep.setTituloNumeroDocumento("01012020");
     rep.setTituloValor("1,23");
     rep = this.getClient().boleto().save("01001001000113", rep);
@@ -91,6 +90,7 @@ public class BoletoServiceTest {
     System.out.println(rep.getIdIntegracao());
     System.out.println(rep.getSacadoNome());
     System.out.println(rep.getTituloValor());
+    System.out.println(rep.getSituacao());
   }
 
 }

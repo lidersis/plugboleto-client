@@ -175,7 +175,7 @@ public class BoletoRepresentation implements Serializable {
   public String tituloValor;
 
   @JsonProperty("situacao")
-  public String situacao;
+  public SituacaoBoletoEnum situacao;
 
   @JsonProperty("impressao_visualizada")
   public Boolean impressaoVisualizada;
@@ -790,11 +790,11 @@ public class BoletoRepresentation implements Serializable {
     this.tituloValor = tituloValor;
   }
 
-  public String getSituacao() {
+  public SituacaoBoletoEnum getSituacao() {
     return this.situacao;
   }
 
-  public void setSituacao(final String situacao) {
+  public void setSituacao(final SituacaoBoletoEnum situacao) {
     this.situacao = situacao;
   }
 

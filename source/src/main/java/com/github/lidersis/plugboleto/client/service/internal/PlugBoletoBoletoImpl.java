@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.lidersis.plugboleto.client.model.BoletoRepresentation;
 import com.github.lidersis.plugboleto.client.model.ErrorRepresentation;
+import com.github.lidersis.plugboleto.client.model.SituacaoBoletoEnum;
 import com.github.lidersis.plugboleto.client.service.PlugBoletoBoleto;
 import com.github.lidersis.plugboleto.client.service.PlugBoletoException;
 import com.github.lidersis.plugboleto.client.utils.JsonUtils;
@@ -94,6 +95,14 @@ public class PlugBoletoBoletoImpl implements PlugBoletoBoleto {
       LoteBoletoResponse output = HttpHelper.exchange(this.httpClient, httpPost, LoteBoletoResponse.class);
       if ((output.getSucesso() != null) && (!output.getSucesso().isEmpty())) {
         BoletoResponse response = output.getSucesso().get(0);
+        
+        if (SituacaoBoletoEnum.SALVO.name().equals(response.getSituacao())) {
+          // Entrar em loop ate o boleto ser emitido
+          // SE ELE FICAR EMITIDO Gera a remessa
+          // SE RETORNAR FALHA DELE DEVE SER descartado
+          // REJEITADO 
+        }
+        
         return this.get(cedente, response.getIdintegracao());
       }
       if ((output.getFalha() != null) && (!output.getFalha().isEmpty())) {
