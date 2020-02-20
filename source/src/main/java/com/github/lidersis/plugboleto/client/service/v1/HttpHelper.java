@@ -1,4 +1,4 @@
-package com.github.lidersis.plugboleto.client.service.internal;
+package com.github.lidersis.plugboleto.client.service.v1;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,33 +42,14 @@ public abstract class HttpHelper {
       }
     }
   }
-
-  private static <T> T exchange(final HttpClient httpClient, final HttpUriRequest httpRequest, final Class<T> clazz, final TypeReference<T> type) throws IOException {
+  
+  private static InputStream doExchange(final HttpClient httpClient, final HttpUriRequest httpRequest) throws IOException {
     HttpResponse httpResponse = httpClient.execute(httpRequest);
     StatusLine statusLine = httpResponse.getStatusLine();
     if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
       HttpEntity httpEntity = httpResponse.getEntity();
       if (httpEntity != null) {
-        try (InputStream inputStream = httpEntity.getContent()) {
-          String json = CharStreams.toString(new InputStreamReader(inputStream));
-          
-          Log.getLog().warn(json);
-          
-          ResponseRepresentation responseWrapper = JsonUtils.toObject(json, ResponseRepresentation.class);
-          if ("sucesso".equals(responseWrapper.getStatus())) {
-            T obj = null;
-            if (clazz != null) {
-              obj = JsonUtils.toObject(responseWrapper.getDados(), clazz);
-            } else {
-              obj = JsonUtils.toObject(responseWrapper.getDados(), type);
-            }
-            return obj;
-          }
-          List<ErrorRepresentation> errorResponse = JsonUtils.toObject(responseWrapper.getDados(), new TypeReference<List<ErrorRepresentation>>() {
-            //
-          });
-          throw new PlugBoletoException(errorResponse);
-        }
+        return httpEntity.getContent();
       }
     }
     if (statusLine.getStatusCode() == HttpStatus.SC_BAD_REQUEST) {
@@ -80,12 +61,39 @@ public abstract class HttpHelper {
     throw new IllegalStateException("HTTP Error: " + statusLine.getStatusCode() + " " + statusLine.getReasonPhrase());
   }
 
+  private static <T> T doExchange(final HttpClient httpClient, final HttpUriRequest httpRequest, final Class<T> clazz, final TypeReference<T> type) throws IOException {
+    try (InputStream inputStream = HttpHelper.doExchange(httpClient, httpRequest)) {
+      String json = CharStreams.toString(new InputStreamReader(inputStream));
+      
+      Log.getLog().warn(json);
+      
+      ResponseRepresentation responseWrapper = JsonUtils.toObject(json, ResponseRepresentation.class);
+      if ("sucesso".equals(responseWrapper.getStatus())) {
+        T obj = null;
+        if (clazz != null) {
+          obj = JsonUtils.toObject(responseWrapper.getDados(), clazz);
+        } else {
+          obj = JsonUtils.toObject(responseWrapper.getDados(), type);
+        }
+        return obj;
+      }
+      List<ErrorRepresentation> errorResponse = JsonUtils.toObject(responseWrapper.getDados(), new TypeReference<List<ErrorRepresentation>>() {
+        //
+      });
+      throw new PlugBoletoException(errorResponse);
+    }
+  }
+  
+  public static InputStream exchange(final HttpClient httpClient, final HttpUriRequest httpRequest) throws IOException {
+    return HttpHelper.doExchange(httpClient, httpRequest);
+  }
+
   public static <T> T exchange(final HttpClient httpClient, final HttpUriRequest httpRequest, final Class<T> clazz) throws IOException {
-    return HttpHelper.exchange(httpClient, httpRequest, clazz, null);
+    return HttpHelper.doExchange(httpClient, httpRequest, clazz, null);
   }
 
   public static <T> T exchange(final HttpClient httpClient, final HttpUriRequest httpRequest, final TypeReference<T> type) throws IOException {
-    return HttpHelper.exchange(httpClient, httpRequest, null, type);
+    return HttpHelper.doExchange(httpClient, httpRequest, null, type);
   }
 
 }

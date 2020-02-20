@@ -1,4 +1,4 @@
-package com.github.lidersis.plugboleto.client.service.internal;
+package com.github.lidersis.plugboleto.client.service.v1;
 
 import java.util.ArrayList;
 import java.util.List;

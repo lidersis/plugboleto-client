@@ -3,10 +3,10 @@ package com.github.lidersis.plugboleto.client.service;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoBoletoImpl;
-import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoCedenteImpl;
-import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoContaImpl;
-import com.github.lidersis.plugboleto.client.service.internal.PlugBoletoConvenioImpl;
+import com.github.lidersis.plugboleto.client.service.v1.PlugBoletoBoletoImpl;
+import com.github.lidersis.plugboleto.client.service.v1.PlugBoletoCedenteImpl;
+import com.github.lidersis.plugboleto.client.service.v1.PlugBoletoContaImpl;
+import com.github.lidersis.plugboleto.client.service.v1.PlugBoletoConvenioImpl;
 
 public class PlugBoletoClient {
 

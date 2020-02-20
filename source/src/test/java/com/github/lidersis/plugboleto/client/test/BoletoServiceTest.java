@@ -1,5 +1,6 @@
 package com.github.lidersis.plugboleto.client.test;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -7,8 +8,11 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.github.lidersis.plugboleto.client.Constants;
 import com.github.lidersis.plugboleto.client.model.BoletoRepresentation;
 import com.github.lidersis.plugboleto.client.service.PlugBoletoClient;
+import com.google.common.io.ByteSource;
+import com.google.common.io.Files;
 
 public class BoletoServiceTest {
 
@@ -36,6 +40,7 @@ public class BoletoServiceTest {
   }
 
   @Test
+  @Ignore
   public void test2() throws Exception {
     List<BoletoRepresentation> list = this.getClient().boleto().list("01001001000113");
     for (BoletoRepresentation item : list) {
@@ -44,7 +49,6 @@ public class BoletoServiceTest {
   }
 
   @Test
-  @Ignore
   public void test3() throws Exception {
     BoletoRepresentation rep = new BoletoRepresentation();
 
@@ -77,11 +81,16 @@ public class BoletoServiceTest {
     rep.setTituloMensagem01("Primeiro campo de mensagem");
     rep.setTituloMensagem02("Segundo campo de mensagem");
     rep.setTituloMensagem03("Terceiro campo de mensagem");
-    rep.setTituloNossoNumero("12345678998");
+    rep.setTituloNossoNumero("10001003"); // MAX 8
     rep.setTituloNumeroDocumento("01012020");
     rep.setTituloValor("1,23");
     rep = this.getClient().boleto().save("01001001000113", rep);
     this.print(rep);
+
+    ByteSource bs = this.getClient().boleto().getPdf("01001001000113", rep.getIdIntegracao(), Constants.TIPO_IMPRESSAO_PDF_NORMAL);
+    File tmpFile = File.createTempFile("boleto", ".pdf");
+    bs.copyTo(Files.asByteSink(tmpFile));
+    System.out.println(tmpFile.getAbsolutePath());
     // 7219
   }
 
@@ -91,6 +100,7 @@ public class BoletoServiceTest {
     System.out.println(rep.getSacadoNome());
     System.out.println(rep.getTituloValor());
     System.out.println(rep.getSituacao());
+    System.out.println(rep.getMotivo());
   }
 
 }

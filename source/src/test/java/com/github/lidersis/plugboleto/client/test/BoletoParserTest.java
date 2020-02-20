@@ -7,7 +7,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.github.lidersis.plugboleto.client.model.ResponseRepresentation;
-import com.github.lidersis.plugboleto.client.service.internal.LoteBoletoResponse;
+import com.github.lidersis.plugboleto.client.service.v1.LoteBoletoResponse;
 import com.github.lidersis.plugboleto.client.utils.JsonUtils;
 import com.google.common.io.Files;
 

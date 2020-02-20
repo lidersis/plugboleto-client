@@ -181,7 +181,7 @@ public class BoletoRepresentation implements Serializable {
   public Boolean impressaoVisualizada;
 
   @JsonProperty("motivo")
-  public Object motivo;
+  public String motivo;
 
   @JsonProperty("PagamentoValorDesconto")
   public String pagamentoValorDesconto;
@@ -806,11 +806,11 @@ public class BoletoRepresentation implements Serializable {
     this.impressaoVisualizada = impressaoVisualizada;
   }
 
-  public Object getMotivo() {
+  public String getMotivo() {
     return this.motivo;
   }
 
-  public void setMotivo(final Object motivo) {
+  public void setMotivo(final String motivo) {
     this.motivo = motivo;
   }
 

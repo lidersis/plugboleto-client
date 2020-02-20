@@ -1,4 +1,4 @@
-package com.github.lidersis.plugboleto.client.service.spring;
+package com.github.lidersis.plugboleto.client.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
