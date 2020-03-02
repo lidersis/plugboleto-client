@@ -45,12 +45,12 @@ public class ContaServiceTest {
   @Ignore
   public void test3() throws Exception {
     ContaRepresentation rep = new ContaRepresentation();
-    rep.setAgencia("2863");
+    rep.setAgencia("3477");
     rep.setAgenciaDv("0");
     rep.setCodBeneficiario("596989");
     rep.setCodigoBanco("001");
-    rep.setConta("32101");
-    rep.setContaDv("X");
+    rep.setConta("37554");
+    rep.setContaDv("3");
     rep.setTipoConta("CORRENTE");
     rep = this.getClient().conta().save("01001001000113", rep);
     this.print(rep);

@@ -28,14 +28,38 @@ public class ConvenioRequest implements Serializable {
   @JsonProperty("ConvenioPadraoCNAB")
   private String convenioPadraoCNAB;
 
-  @JsonProperty("ConvenioNumeroRemessa")
-  private String convenioNumeroRemessa;
-
   @JsonProperty("ConvenioReiniciarDiariamente")
   private Boolean convenioReiniciarDiariamente;
 
+  @JsonProperty("ConvenioNumeroRemessa")
+  private String convenioNumeroRemessa;
+
+  @JsonProperty("ConvenioUtilizaVan")
+  private Boolean convenioUtilizaVan;
+
   @JsonProperty("Conta")
   private Integer conta;
+
+  @JsonProperty("ConvenioDensidaDeRemessa")
+  private Integer convenioDensidaDeRemessa;
+
+  @JsonProperty("ConvenioRegistroInstantaneo")
+  private Boolean convenioRegistroInstantaneo;
+
+  @JsonProperty("ConvenioApiId")
+  private String convenioApiId;
+
+  @JsonProperty("ConvenioApiKey")
+  private String convenioApiKey;
+
+  @JsonProperty("ConvenioApiSecret")
+  private String convenioApiSecret;
+
+  @JsonProperty("ConvenioEstacao")
+  private String convenioEstacao;
+
+  @JsonProperty("ConvenioNossoNumeroBanco")
+  private Boolean convenioNossoNumeroBanco;
 
   public ConvenioRequest() {
     super();
@@ -81,14 +105,6 @@ public class ConvenioRequest implements Serializable {
     this.convenioPadraoCNAB = convenioPadraoCNAB;
   }
 
-  public String getConvenioNumeroRemessa() {
-    return this.convenioNumeroRemessa;
-  }
-
-  public void setConvenioNumeroRemessa(final String convenioNumeroRemessa) {
-    this.convenioNumeroRemessa = convenioNumeroRemessa;
-  }
-
   public Boolean getConvenioReiniciarDiariamente() {
     return this.convenioReiniciarDiariamente;
   }
@@ -97,12 +113,84 @@ public class ConvenioRequest implements Serializable {
     this.convenioReiniciarDiariamente = convenioReiniciarDiariamente;
   }
 
+  public String getConvenioNumeroRemessa() {
+    return this.convenioNumeroRemessa;
+  }
+
+  public void setConvenioNumeroRemessa(final String convenioNumeroRemessa) {
+    this.convenioNumeroRemessa = convenioNumeroRemessa;
+  }
+
+  public Boolean getConvenioUtilizaVan() {
+    return this.convenioUtilizaVan;
+  }
+
+  public void setConvenioUtilizaVan(final Boolean convenioUtilizaVan) {
+    this.convenioUtilizaVan = convenioUtilizaVan;
+  }
+
   public Integer getConta() {
     return this.conta;
   }
 
   public void setConta(final Integer conta) {
     this.conta = conta;
+  }
+
+  public Integer getConvenioDensidaDeRemessa() {
+    return this.convenioDensidaDeRemessa;
+  }
+
+  public void setConvenioDensidaDeRemessa(final Integer convenioDensidaDeRemessa) {
+    this.convenioDensidaDeRemessa = convenioDensidaDeRemessa;
+  }
+
+  public Boolean getConvenioRegistroInstantaneo() {
+    return this.convenioRegistroInstantaneo;
+  }
+
+  public void setConvenioRegistroInstantaneo(final Boolean convenioRegistroInstantaneo) {
+    this.convenioRegistroInstantaneo = convenioRegistroInstantaneo;
+  }
+
+  public String getConvenioApiId() {
+    return this.convenioApiId;
+  }
+
+  public void setConvenioApiId(final String convenioApiId) {
+    this.convenioApiId = convenioApiId;
+  }
+
+  public String getConvenioApiKey() {
+    return this.convenioApiKey;
+  }
+
+  public void setConvenioApiKey(final String convenioApiKey) {
+    this.convenioApiKey = convenioApiKey;
+  }
+
+  public String getConvenioApiSecret() {
+    return this.convenioApiSecret;
+  }
+
+  public void setConvenioApiSecret(final String convenioApiSecret) {
+    this.convenioApiSecret = convenioApiSecret;
+  }
+
+  public String getConvenioEstacao() {
+    return this.convenioEstacao;
+  }
+
+  public void setConvenioEstacao(final String convenioEstacao) {
+    this.convenioEstacao = convenioEstacao;
+  }
+
+  public Boolean getConvenioNossoNumeroBanco() {
+    return this.convenioNossoNumeroBanco;
+  }
+
+  public void setConvenioNossoNumeroBanco(final Boolean convenioNossoNumeroBanco) {
+    this.convenioNossoNumeroBanco = convenioNossoNumeroBanco;
   }
 
 }

@@ -49,9 +49,9 @@ public class ConvenioServiceTest {
     rep.setCarteira("01");
     rep.setDescricaoConvenio("Teste Lidersis");
     rep.setEspecie("R$");
-    rep.setNumeroConvenio("11122233344455");
+    rep.setNumeroConvenio("3239386");
     rep.setNumeroRemessa(null);
-    rep.setPadraoCNAB("240");
+    rep.setPadraoCNAB("400");
     rep.setReiniciarDiariamente(Boolean.FALSE);
     rep = this.getClient().convenio().save("01001001000113", rep);
     this.print(rep);
